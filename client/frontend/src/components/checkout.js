@@ -26,7 +26,7 @@ const Checkout = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:5000/api/order/add", orderData);
+      const response = await axios.post("https://clothing-mern-project-server.onrender.com/api/order/add", orderData);
       if (response.status === 201) {
         setOrderPlaced(true);
         clearCart();
