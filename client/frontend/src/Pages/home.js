@@ -23,7 +23,7 @@ const HomePage = () => {
     // Fetch products from API
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/products");
+        const res = await axios.get("https://clothing-mern-project-server.onrender.com/api/products");
         // setProducts(res.data);
 
         // Filter Best Sellers
