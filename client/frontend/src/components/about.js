@@ -11,11 +11,11 @@ const About = () => {
             About <span className="text-primary">Us</span>
           </h2>
           <p className="lead text-muted mb-4">
-            At <strong>[Your Brand Name]</strong>, we believe fashion is the ultimate expression of individuality.
+            At <strong>Brand Store</strong>, we believe fashion is the ultimate expression of individuality.
             We craft stylish, comfortable clothing to help you stand out and feel your best.
           </p>
           <p className="text-muted">
-            Since [Year], our commitment has been to quality, sustainability, and innovation — bringing you
+            Since 2025, our commitment has been to quality, sustainability, and innovation — bringing you
             collections that are both timeless and trendsetting.
           </p>
           <a href="/shop" className="btn btn-primary btn-lg mt-4">
