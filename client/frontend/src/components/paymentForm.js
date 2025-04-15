@@ -17,7 +17,7 @@ const CheckoutForm = ({ totalAmount, onPaymentSuccess }) => {
     setLoading(true);
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/payment/create-payment-intent", {
+      const { data } = await axios.post("https://clothing-mern-project-server.onrender.com/api/payment/create-payment-intent", {
         amount: Math.round(totalAmount * 100),
       });
 
