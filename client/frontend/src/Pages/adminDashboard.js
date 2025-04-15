@@ -46,9 +46,9 @@ const AdminDashboard = () => {
     useEffect(() => {
         const fetchDashboardData = async () => {
             try {
-                const usersRes = await axios.get('http://localhost:5000/api/auth');
-                const productsRes = await axios.get('http://localhost:5000/api/products');
-                const ordersRes = await axios.get('http://localhost:5000/api/order');
+                const usersRes = await axios.get('https://clothing-mern-project-server.onrender.com/api/auth');
+                const productsRes = await axios.get('https://clothing-mern-project-server.onrender.com/api/products');
+                const ordersRes = await axios.get('https://clothing-mern-project-server.onrender.com/api/order');
                 const revenue = ordersRes.data.reduce((sum, order) => sum + order.totalAmount, 0).toFixed(2)
                 setDashboardData({
                     users: usersRes.data.length,
@@ -68,13 +68,13 @@ const AdminDashboard = () => {
         const fetchData = async () => {
             try {
                 if (activeSection === 'users') {
-                    const res = await axios.get('http://localhost:5000/api/auth');
+                    const res = await axios.get('https://clothing-mern-project-server.onrender.com/api/auth');
                     setUsers(res.data);
                 } else if (activeSection === 'products') {
-                    const res = await axios.get('http://localhost:5000/api/products');
+                    const res = await axios.get('https://clothing-mern-project-server.onrender.com/api/products');
                     setProducts(res.data);
                 } else if (activeSection === 'orders') {
-                    const res = await axios.get('http://localhost:5000/api/order');
+                    const res = await axios.get('https://clothing-mern-project-server.onrender.com/api/order');
                     setOrders(res.data);
                 }
             } catch (error) {
@@ -87,7 +87,7 @@ const AdminDashboard = () => {
     // Delete handlers
     const handleDeleteUser = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/auth/${id}`);
+            await axios.delete(`https://clothing-mern-project-server.onrender.com/api/auth/${id}`);
             setUsers(users.filter(user => user._id !== id));
         } catch (error) {
             console.error('Error deleting user:', error);
@@ -96,7 +96,7 @@ const AdminDashboard = () => {
 
     const handleDeleteProduct = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`);
+            await axios.delete(`https://clothing-mern-project-server.onrender.com/api/products/${id}`);
             setProducts(products.filter(product => product._id !== id));
         } catch (error) {
             console.error('Error deleting product:', error);
@@ -105,7 +105,7 @@ const AdminDashboard = () => {
 
     const handleDeleteOrder = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/order/${id}`);
+            await axios.delete(`https://clothing-mern-project-server.onrender.com/api/order/${id}`);
             setOrders(orders.filter(order => order._id !== id));
         } catch (error) {
             console.error('Error deleting order:', error);
@@ -139,7 +139,7 @@ const AdminDashboard = () => {
         e.preventDefault();
         if (editingProduct._id) {
             try {
-                await axios.put(`http://localhost:5000/api/products/${editingProduct._id}`, editingProduct);
+                await axios.put(`https://clothing-mern-project-server.onrender.com/api/products/${editingProduct._id}`, editingProduct);
                 const updatedProducts = products.map(p =>
                     p._id === editingProduct._id ? editingProduct : p
                 );
