@@ -49,12 +49,12 @@ const NavigationBar = () => {
     const userId = JSON.parse(localStorage.getItem('user'))._id
     try {
       const res = await axios.put(`https://clothing-mern-project-server.onrender.com/api/auth/update`, { userId, currentPassword, newPassword });
+      alert("Profile Password Updated Succesfully")
+      handleLogout()
+      setShowPasswordModal(false);
     } catch (error) {
-      console.log(error)
+      alert(error.response.data.message)
     }
-    alert("Profile Password Updated Successfully")
-    handleLogout()
-    setShowPasswordModal(false);
   };
 
   return (
