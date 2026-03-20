@@ -21,7 +21,7 @@ const UserOrders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await axios.get(`https://clothing-mern-project-server.onrender.com/api/order/user/${userId}`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/order/user/${userId}`);
         setOrders(response.data);
       } catch (error) {
         console.error("Failed to fetch user orders:", error);

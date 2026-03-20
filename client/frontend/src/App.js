@@ -19,7 +19,6 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-
         <AppContent />
       </Router>
     </AuthProvider>

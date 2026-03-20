@@ -15,13 +15,13 @@ const AuthProvider = ({ children }) => {
     }, []);
 
     const login = async (email, password) => {
-        const { data } = await axios.post("https://clothing-mern-project-server.onrender.com/api/auth/login", { email, password });
+        const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, { email, password });
         setUser(data);
         localStorage.setItem("user", JSON.stringify(data));
     };
 
     const signup = async (name, email, password) => {
-        const { data } = await axios.post("https://clothing-mern-project-server.onrender.com/api/auth/signup", { name, email, password });
+        const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, { name, email, password });
         setUser(data);
         localStorage.setItem("user", JSON.stringify(data));
     };

@@ -10,7 +10,7 @@ const ProductModal = ({ selectedProduct, showModal, setShowModal, addToCart }) =
   const navigate=useNavigate();
   useEffect(() => {
     if (selectedProduct) {
-      axios.get(`https://clothing-mern-project-server.onrender.com/api/reviews?productId=${selectedProduct._id}`)
+      axios.get(`${process.env.REACT_APP_API_URL}/api/reviews?productId=${selectedProduct._id}`)
         .then((res) => setReviews(res.data))
         .catch((err) => console.error(err));
     }
@@ -24,7 +24,7 @@ const ProductModal = ({ selectedProduct, showModal, setShowModal, addToCart }) =
   const handleReviewSubmit = (e) => {
     if (user) {
       e.preventDefault();
-      axios.post('https://clothing-mern-project-server.onrender.com/api/reviews', {
+      axios.post(`${process.env.REACT_APP_API_URL}/api/reviews`, {
         product: selectedProduct._id,
         name: reviewForm.name,
         text: reviewForm.text,

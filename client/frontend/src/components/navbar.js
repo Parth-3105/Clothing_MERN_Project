@@ -35,7 +35,7 @@ const NavigationBar = () => {
   const handleNameUpdate = async (newName) => {
     const userId = JSON.parse(localStorage.getItem('user'))._id
     try {
-      const { data } = await axios.put(`https://clothing-mern-project-server.onrender.com/api/auth/update`, { userId, newName });
+      const { data } = await axios.put(`${process.env.REACT_APP_API_URL}/api/auth/update`, { userId, newName });
       localStorage.setItem("user", JSON.stringify(data));
       setShowNameModal(false);
       alert("Profile Name Updated Successfully")
@@ -48,7 +48,7 @@ const NavigationBar = () => {
   const handlePasswordUpdate = async (currentPassword, newPassword) => {
     const userId = JSON.parse(localStorage.getItem('user'))._id
     try {
-      const res = await axios.put(`https://clothing-mern-project-server.onrender.com/api/auth/update`, { userId, currentPassword, newPassword });
+      const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/auth/update`, { userId, currentPassword, newPassword });
       alert("Profile Password Updated Succesfully")
       handleLogout()
       setShowPasswordModal(false);
