@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.8.4",
     "bootstrap": "^5.3.3",
+    "cross-env": "^10.1.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^19.0.0",
@@ -23,7 +24,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
